@@ -18,8 +18,9 @@ class CreateFinancialAccountTable extends Migration
             $table->string("name", 100);
             $table->unsignedBigInteger("user_id");
             $table->foreign("user_id")->references("id")->on("users");
-            $table->bigInteger("limit");
-            $table->bigInteger("balance");
+            $table->bigInteger("limit")->default(0);
+            $table->bigInteger("balance")->default(0);
+            $table->dateTime("deleted_at")->nullable();
             $table->timestamps();
         });
     }
