@@ -14,17 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
 Route::group(['prefix' => 'v1'], function (){
     Route::namespace("Authentication")->group(function (){
-        Route::post("/register","RegisterController@registerUser");
-        Route::post("/login", "LoginController@login");
+        Route::post("/register","RegisterController@registerUser")->name("register");
+        Route::post("/login", "LoginController@login")->name("login");
     });
+
+    Route::group(['middleware' => ['jwt.verify']], function (){
+        Route::namespace("Finance")->group(function (){
+            Route::group(['prefix' => '/account'], function (){
+                Route::post("/create", "AccountController@createAccount")->name("create_account");
+                Route::get("/all","AccountController@getAllAccount")->name("get_all_account");
+                Route::get("/user-account","AccountController@getAccountInfo")->name("get_all_account_by_user");
+                Route::get("/user-account/{id}","AccountController@getAccountInfoById")->name("get_all_account_by_id");
+                Route::put("/update/{id}","AccountController@updateAccount")->name("update_account");
+                Route::delete('/delete/{id}',"AccountController@delete")->name("delete_account");
+            });
+        });
+    });
+
 });
 
-Route::group(['middleware' => ['jwt.verify']], function (){
-    Route::get('/get-user', 'Authentication\LoginController@getCurrentUserInfo');
-});
+
