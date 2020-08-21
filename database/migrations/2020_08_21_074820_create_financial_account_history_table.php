@@ -16,11 +16,12 @@ class CreateFinancialAccountHistoryTable extends Migration
         Schema::create('financial_account_history', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("financial_account_id");
-            $table->foreign("financial_account_id")->references("id")->on("financial_account");
+            $table->foreign("financial_account_id")->references("id")->on("financial_account")->onDelete("cascade");
             $table->string("title");
             $table->text("description")->nullable();
             $table->bigInteger("amount");
             $table->enum("type",["debit","credit"]);
+            $table->dateTime("deleted_at")->nullable();
             $table->timestamps();
         });
     }
