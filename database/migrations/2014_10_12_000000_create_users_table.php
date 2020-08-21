@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->enum("roles",["USER","ADMIN"])->default("USER");
             $table->rememberToken();
             $table->timestamps();
+            $table->timestamp("login_at")->nullable();
             $table->timestamp("deleted_at")->nullable();
         });
     }
