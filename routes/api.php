@@ -24,3 +24,7 @@ Route::group(['prefix' => 'v1'], function (){
         Route::post("/login", "LoginController@login");
     });
 });
+
+Route::group(['middleware' => ['jwt.verify']], function (){
+    Route::get('/get-user', 'Authentication\LoginController@getCurrentUserInfo');
+});
