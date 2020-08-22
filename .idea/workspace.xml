@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a06bd47a-0950-48c1-8ea0-9b741f6b6812" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/paper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/paper.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Finance/TransactionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/273adeeb-71e4-4339-a5b1-db67266f8e7b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/273adeeb-71e4-4339-a5b1-db67266f8e7b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Authentication/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Authentication/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,12 +178,23 @@
       <updated>1597995978433</updated>
       <workItem from="1597995979709" duration="1231000" />
       <workItem from="1597997656786" duration="3459000" />
-      <workItem from="1598003220701" duration="613000" />
+      <workItem from="1598003220701" duration="12765000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="240" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597996749980">
@@ -181,14 +205,14 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="436" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1598001419009" />
-    <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598003467183">
+    <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598019503908">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1598003467183" />
-    <state x="265" y="117" key="NewPhpClassDialog" timestamp="1597998393240">
+    <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1598019503908" />
+    <state x="265" y="117" key="NewPhpClassDialog" timestamp="1598018791156">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="265" y="117" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1597998393240" />
+    <state x="265" y="117" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1598018791156" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1597996269496">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
