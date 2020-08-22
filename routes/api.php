@@ -25,6 +25,14 @@ Route::group(['prefix' => 'v1'], function (){
     });
 
     Route::group(['middleware' => ['jwt.verify']], function (){
+
+        Route::namespace("user")->group(function (){
+            Route::group(['prefix'=>'/user'], function (){
+                Route::get('/', 'UserController@getUser')->name('get_user_profile');
+            });
+        });
+
+
         Route::namespace("Finance")->group(function (){
             Route::group(['prefix' => '/account'], function (){
                 Route::post("/create", "AccountController@createAccount")->name("create_account");

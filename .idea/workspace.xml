@@ -20,10 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a06bd47a-0950-48c1-8ea0-9b741f6b6812" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Finance/TransactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/273adeeb-71e4-4339-a5b1-db67266f8e7b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/273adeeb-71e4-4339-a5b1-db67266f8e7b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +176,7 @@
       <updated>1597995978433</updated>
       <workItem from="1597995979709" duration="1231000" />
       <workItem from="1597997656786" duration="3459000" />
-      <workItem from="1598003220701" duration="12765000" />
+      <workItem from="1598003220701" duration="13360000" />
     </task>
     <servers />
   </component>
@@ -209,10 +207,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1598019503908" />
-    <state x="265" y="117" key="NewPhpClassDialog" timestamp="1598018791156">
+    <state x="265" y="117" key="NewPhpClassDialog" timestamp="1598076538272">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="265" y="117" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1598018791156" />
+    <state x="265" y="117" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1598076538272" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1597996269496">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
