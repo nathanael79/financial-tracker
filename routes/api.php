@@ -59,6 +59,7 @@ Route::group(['prefix' => 'v1'], function (){
                 Route::get('/{id}','TransactionController@getTransactionById')->name('get_transaction_by_id');
                 Route::delete('/{id}','TransactionController@deleteTransaction')->name('delete_transaction');
                 Route::put("/{id}","TransactionController@updateTransaction")->name("update_transaction");
+                Route::get("/restore/{id}","TransactionController@restore")->name("restore_transaction");
             });
         });
     });

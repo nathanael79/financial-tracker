@@ -176,4 +176,14 @@ class TransactionController extends Controller
             return $this->responseJson(null, 'failed',500);
         }
     }
+
+    public function restore($id){
+        try{
+            $data = FinancialHistory::onlyTrashed()->where('id',$id)->first();
+            $data->restore();
+            return $this->responseJson($data, 'restored', 200);
+        }catch (Exception $e){
+            return $this->responseJson(null, 'failed',500);
+        }
+    }
 }
