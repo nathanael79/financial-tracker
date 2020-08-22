@@ -22,4 +22,5 @@ class FinancialAccount extends Model
     public function getHistory(){
         return $this->hasMany(FinancialHistory::class,'financial_account_id','id');
     }
+
 }

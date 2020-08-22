@@ -26,9 +26,15 @@ Route::group(['prefix' => 'v1'], function (){
 
     Route::group(['middleware' => ['jwt.verify']], function (){
 
-        Route::namespace("user")->group(function (){
+        Route::namespace("User")->group(function (){
             Route::group(['prefix'=>'/user'], function (){
                 Route::get('/', 'UserController@getUser')->name('get_user_profile');
+            });
+        });
+
+        Route::namespace("Report")->group(function (){
+            Route::group(['prefix' => '/report'], function (){
+                Route::get('/{param}', 'ReportController@getSummary')->name("get_summary_report");
             });
         });
 
@@ -52,9 +58,6 @@ Route::group(['prefix' => 'v1'], function (){
                 Route::delete('/{id}','TransactionController@deleteTransaction')->name('delete_transaction');
                 Route::put("/{id}","TransactionController@updateTransaction")->name("update_transaction");
             });
-
-
-
         });
     });
 
