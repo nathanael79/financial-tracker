@@ -34,7 +34,8 @@ Route::group(['prefix' => 'v1'], function (){
 
         Route::namespace("Report")->group(function (){
             Route::group(['prefix' => '/report'], function (){
-                Route::get('/{param}', 'ReportController@getSummary')->name("get_summary_report");
+                Route::get('/{param}', 'ReportController@getAllFinanceTransaction')->name("get_summary_report");
+                Route::get('/summary/{param}', 'ReportController@getSummary')->name("get_summary_report");
             });
         });
 

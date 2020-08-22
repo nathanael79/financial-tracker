@@ -13,6 +13,7 @@ class FinancialAccount extends Model
         [
             'name',
             'user_id',
+            'type',
             'limit',
             'balance'
         ];

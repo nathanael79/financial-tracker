@@ -5,15 +5,16 @@ namespace App\Http\Controllers\Report;
 
 
 use App\FinancialAccount;
+use App\FinancialHistory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Exception;
 
 class ReportController extends Controller
 {
-    public function getSummary(Request $request, $param){
-
+    public function getAllFinanceTransaction(Request $request, $param){
         $validator = Validator::make($request->all(), [
             'year' => 'integer',
             'month' => 'integer|min:1|max:12',
@@ -23,7 +24,6 @@ class ReportController extends Controller
         if ($validator->fails()) {
             return $this->responseJson(null, $validator->errors(), 422);
         }
-
 
         try{
             if($request->only('date')){
@@ -64,6 +64,21 @@ class ReportController extends Controller
         }catch (Exception $e){
             return $this->responseJson(null, 'failed',500);
         }
+    }
+
+    public function getSummary($param){
+        $userId = $this->getAuthenticatedUser()->id;
+        $query = "SELECT YEAR(fah.created_at)  AS year, MONTH(fah.created_at)  AS month,  SUM(fah.amount)  AS total
+                  FROM financial_account_history fah
+                  WHERE fah.financial_account_id IN (
+                    SELECT id FROM financial_account fa WHERE fa.user_id  =  '".$userId."'
+                  )
+                  AND fah.type = '".$param."'
+                  GROUP BY YEAR(fah.created_at),MONTH(fah.created_at)";
+
+        $data = DB::select($query);
+
+        return $this->responseJson($data, 'success', 200);
 
     }
 
