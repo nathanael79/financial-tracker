@@ -1,61 +1,133 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Financial Tracker
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+This is the financial tracker API for app that helps users to track their daily / monthly expenses and incomes, thus ultimately helping them not to overspend or lose track of their finances. At the same time, the app needs to be able to inform the users what is the highest expense, what's left in a month, so that they can improve their expense and income pattern in the future.
 
-## About Laravel
+# Requirements
+-   PHP >= 7.2.5
+-   BCMath PHP Extension
+-   Ctype PHP Extension
+-   Fileinfo PHP extension
+-   JSON PHP Extension
+-   Mbstring PHP Extension
+-   OpenSSL PHP Extension
+-   PDO PHP Extension
+-   Tokenizer PHP Extension
+-   XML PHP Extension
+- Webserver
+- MySQL
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Installation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+ - Clone this project to your local computer
+ - Use `composer install` inside cloned project to install the vendor
+ - Copy paste `.env.example` to `.env`, dont forget to setup `.env` according to your environment like database connection, app_debug, app_url and app.env
+ - Run migration + seeder using this command: `php artisan migrate --seed`, it will create a database inside your DBMS and fill the user table with defined user by default.
+ - Finally, you can run it using `php artisan serve` and it will show up with default url (http://localhost:8000)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# API Documentation
+All of the API except Register & Login, need to bearer a token that created by system when you login as admin. You can login by default using this account information:
 
-## Learning Laravel
+ - username: admin@admin.com
+ - password: admin123
+ 
+## HTTP Status Code
+ - 200 = OK
+ - 500 = Failed
+ - 404 = Data not found/empty
+ - 403 = Forbidden
+ - 422 = Unprocessable Entity
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## AUTHENTICATION
+### Register (http://localhost:8000/api/v1/register - POST)
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| name | string | Yes | - |
+| email | email | Yes | - |
+| password | string | Yes | - |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Login (http://localhost:8000/api/v1/login - POST)
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| email | email | Yes | - |
+| password | string | Yes | - |
 
-## Laravel Sponsors
+## USER
+### User Information (http://localhost:8000/api/v1/user - GET)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## FINANCIAL ACCOUNT
+### Create a Financial Account (http://localhost:8000/api/v1/account/create - POST)
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| name | string | Yes | - |
+| type | string | No | Default: null |
+| limit | integer | No | Default:0 |
 
-### Premium Partners
+### Update a Financial Account (http://localhost:8000/api/v1/account/update/{id} - PUT)
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| name | string | No | - |
+| type | string | No | Default: null |
+| limit | integer | No | Default:0 |
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+### GET Financial Account (http://localhost:8000/api/v1/account/user-account/{id} - GET)
 
-## Contributing
+### GET Financial Account By USER (http://localhost:8000/api/v1/account/user-account - GET)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### GET ALL Financial Account (http://localhost:8000/api/v1/account/all - GET)
 
-## Code of Conduct
+### Delete a Financial Account (http://localhost:8000/api/v1/account/delete/{id} - DELETE)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Restore Deleted Financial Account (http://localhost:8000/api/v1/account/restore/{id} - GET)
 
-## Security Vulnerabilities
+## TRANSACTION
+### Create a Transaction (http://localhost:8000/api/v1/transaction/create - POST)
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| financial_account_id | integer | Yes | - |
+| title | string | Yes | - |
+| description | text | No | - |
+| amount | integer | Yes | - |
+| type | enum: debit,credit | Yes | - |
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### GET Transaction (http://localhost:8000/api/v1/transaction/{id} - GET)
 
+### GET Transaction by Financial Account (http://localhost:8000/api/v1/transaction/account/{financialAccountId} - GET)
+
+### GET Transaction by User(http://localhost:8000/api/v1/transaction/user/{userId} - GET)
+
+### GET All Transaction (http://localhost:8000/api/v1/transaction/all - GET)
+
+### Update a Transaction (http://localhost:8000/api/v1/transaction/{id} - PUT)
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| title | string | No | - |
+| description | text | No | - |
+| amount | integer | Yes | - |
+| type | enum: debit,credit | Yes | - |
+
+### Delete a Transaction (http://localhost:8000/api/v1/transaction/{id} - DELETE)
+
+### Restore Deleted Transaction (http://localhost:8000/api/v1/transaction/restore/{id} - GET)
+
+## REPORT/SUMMARY
+### GET Report/Summary All Financial Account of USER (http://localhost:8000/api/v1/report/summary/{param} - GET)
+Parameter (param) must be enum value: credit/debit by string
+
+### GET Filtered Report/Summary All Financial Account of USER (http://localhost:8000/api/v1/report/{param} - GET)
+Parameter (param) must be enum value: credit/debit by string
+
+## Credits
+ 
+Fullstack Developer - Imanuel Ronaldo (@nathanael79)
+ 
 ## License
+ 
+The MIT License (MIT)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Copyright (c) 2020 Imanuel Ronaldo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
