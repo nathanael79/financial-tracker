@@ -48,6 +48,7 @@ Route::group(['prefix' => 'v1'], function (){
                 Route::get("/user-account/{id}","AccountController@getAccountInfoById")->name("get_all_account_by_id");
                 Route::put("/update/{id}","AccountController@updateAccount")->name("update_account");
                 Route::delete('/delete/{id}',"AccountController@delete")->name("delete_account");
+                Route::get("/restore/{id}","AccountController@restore")->name("restore_account");
             });
 
             Route::group(['prefix' => 'transaction'], function (){
