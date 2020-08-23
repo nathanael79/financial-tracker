@@ -28,7 +28,7 @@ Route::group(['prefix' => 'v1'], function (){
 
         Route::namespace('Search')->group(function (){
             Route::group(['prefix' => '/search'],function (){
-                Route::get('/{limit}/{page}/{offset}', 'SearchController@search')->name('search');
+                Route::get('/{limit?}/{page?}/{offset?}', 'SearchController@search')->name('search');
             });
         });
 
