@@ -93,11 +93,14 @@ In this repository also contain postman collection to give you an easier way to 
 
 ### GET Transaction (http://localhost:8000/api/v1/transaction/{id} - GET)
 
-### GET Transaction by Financial Account (http://localhost:8000/api/v1/transaction/account/{financialAccountId} - GET)
+### GET Transaction by Financial Account (http://localhost:8000/api/v1/transaction/account/{financialAccountId}/{limit}/{page}/{offset} - GET)
+Limit, Page and Offset is optional
 
-### GET Transaction by User(http://localhost:8000/api/v1/transaction/user/{userId} - GET)
+### GET Transaction by User(http://localhost:8000/api/v1/transaction/user/{userId}/{limit}/{page}/{offset} - GET)
+Limit, Page and Offset is optional
 
-### GET All Transaction (http://localhost:8000/api/v1/transaction/all - GET)
+### GET All Transaction (http://localhost:8000/api/v1/transaction/all/{limit}/{page}/{offset} - GET)
+Limit, Page and Offset is optional
 
 ### Update a Transaction (http://localhost:8000/api/v1/transaction/{id} - PUT)
 | Field Name | Type  | Required | Description |
