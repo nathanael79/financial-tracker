@@ -115,9 +115,9 @@ class TransactionController extends Controller
         }
     }
 
-    public function getAllTransaction(){
+    public function getAllTransaction($limit = 10, $page = 1, $offset = 0){
         try{
-            $data = FinancialHistory::all();
+            $data = FinancialHistory::offset($offset)->limit($limit)->get();
             if(empty($data)){
                 return $this->responseJson(null, 'not found',404);
             }else{
@@ -128,9 +128,12 @@ class TransactionController extends Controller
         }
     }
 
-    public function getAllTransactionByUser($id){
+    public function getAllTransactionByUser($id, $limit = 10, $page = 1, $offset = 0){
         try{
-            $data = FinancialAccount::with('getHistory')->where('user_id',$id)->get();
+            $data = FinancialAccount::with('getHistory')->where('user_id',$id)
+                ->offset($offset)
+                ->limit($limit)
+                ->get();
             if(empty($data)){
                 return $this->responseJson(null, 'not found',404);
             }else{
