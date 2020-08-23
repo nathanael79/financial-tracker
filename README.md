@@ -119,7 +119,7 @@ Parameter (param) must be enum value: credit/debit by string
 Parameter (param) must be enum value: credit/debit by string
 
 ## SEARCH
-### SEARCH DATA (http://localhost:8000/api/v1/search - GET)
+### SEARCH DATA (http://localhost:8000/api/v1/search/{limit}/{page}/{offset} - GET)
 | Field Name | Type  | Required | Description |
 |--|--|--|--|
 | keyword | string, integer | No | - |
