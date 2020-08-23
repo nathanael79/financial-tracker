@@ -116,6 +116,14 @@ Parameter (param) must be enum value: credit/debit by string
 ### GET Filtered Report/Summary All Financial Account of USER (http://localhost:8000/api/v1/report/{param} - GET)
 Parameter (param) must be enum value: credit/debit by string
 
+## SEARCH
+### SEARCH DATA (http://localhost:8000/api/v1/search - GET)
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| keyword | string, integer | No | - |
+
+This search function will look for all the column in Financial Account Table and Financial Account History Table
+
 ## Credits
  
 Fullstack Developer - Imanuel Ronaldo (@nathanael79)

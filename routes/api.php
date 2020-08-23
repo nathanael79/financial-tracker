@@ -26,6 +26,12 @@ Route::group(['prefix' => 'v1'], function (){
 
     Route::group(['middleware' => ['jwt.verify']], function (){
 
+        Route::namespace('Search')->group(function (){
+            Route::group(['prefix' => '/search'],function (){
+                Route::get('/', 'SearchController@search')->name('search');
+            });
+        });
+
         Route::namespace("User")->group(function (){
             Route::group(['prefix'=>'/user'], function (){
                 Route::get('/', 'UserController@getUser')->name('get_user_profile');
@@ -38,7 +44,6 @@ Route::group(['prefix' => 'v1'], function (){
                 Route::get('/summary/{param}', 'ReportController@getSummary')->name("get_summary_report");
             });
         });
-
 
         Route::namespace("Finance")->group(function (){
             Route::group(['prefix' => '/account'], function (){

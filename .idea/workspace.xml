@@ -20,7 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a06bd47a-0950-48c1-8ea0-9b741f6b6812" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Search/SearchController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +178,8 @@
       <workItem from="1597995979709" duration="1231000" />
       <workItem from="1597997656786" duration="3459000" />
       <workItem from="1598003220701" duration="23140000" />
+      <workItem from="1598120443780" duration="261000" />
+      <workItem from="1598156496104" duration="1135000" />
     </task>
     <servers />
   </component>
@@ -191,6 +196,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="240" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597996749980">
@@ -205,10 +211,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1598097816208" />
-    <state x="265" y="117" key="NewPhpClassDialog" timestamp="1598097318127">
+    <state x="265" y="117" key="NewPhpClassDialog" timestamp="1598156527551">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="265" y="117" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1598097318127" />
+    <state x="265" y="117" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1598156527551" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1598099329518">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
