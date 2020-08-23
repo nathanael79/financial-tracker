@@ -60,7 +60,7 @@ Route::group(['prefix' => 'v1'], function (){
                 Route::post('/create','TransactionController@createTransaction')->name('create_transaction');
                 Route::get('/all','TransactionController@getAllTransaction')->name('get_all_transaction');
                 Route::get('/user/{id}','TransactionController@getAllTransactionByUser')->name('get_all_transaction_by_user');
-                Route::get('/account/{id}','TransactionController@getAllTransactionByAccountId')->name('get_all_transaction_by_account');
+                Route::get('/account/{id}/{limit?}/{page?}/{offset?}','TransactionController@getAllTransactionByAccountId')->name('get_all_transaction_by_account');
                 Route::get('/{id}','TransactionController@getTransactionById')->name('get_transaction_by_id');
                 Route::delete('/{id}','TransactionController@deleteTransaction')->name('delete_transaction');
                 Route::put("/{id}","TransactionController@updateTransaction")->name("update_transaction");

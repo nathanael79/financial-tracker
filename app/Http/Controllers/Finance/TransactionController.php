@@ -141,9 +141,13 @@ class TransactionController extends Controller
         }
     }
 
-    public function getAllTransactionByAccountId($id){
+    public function getAllTransactionByAccountId($id, $limit = 10, $page = 1, $offset = 0){
         try{
-            $data = FinancialHistory::where('financial_account_id',$id)->get();
+            $data = FinancialHistory::where('financial_account_id',$id)
+                ->offset($offset)
+                ->limit($limit)
+                ->get();
+
             if(empty($data)){
                 return $this->responseJson(null, 'not found',404);
             }else{
