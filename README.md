@@ -30,6 +30,8 @@ All of the API except Register & Login, need to bearer a token that created by s
  - username: admin@admin.com
  - password: admin123
  
+In this repository also contain postman collection to give you an easier way to test this API
+ 
 ## HTTP Status Code
  - 200 = OK
  - 500 = Failed
