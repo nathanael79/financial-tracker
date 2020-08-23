@@ -11,7 +11,7 @@ use Exception;
 
 class SearchController extends Controller
 {
-    public function search(Request $request){
+    public function search(Request $request, $limit = 10, $page = 1, $offset = 0){
 
         $q = $request->input('keyword');
 
@@ -38,6 +38,8 @@ class SearchController extends Controller
                 ->orWhere('description', 'like', '%' . $q . '%')
                 ->orWhere('amount', 'like', '%' . $q . '%')
                 ->orWhere('financial_account_history.type', 'like', '%' . $q . '%')
+                ->offset($offset)
+                ->limit($limit)
                 ->get();
 
             if (is_null($data)) {
